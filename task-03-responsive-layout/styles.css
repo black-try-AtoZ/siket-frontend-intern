@@ -1,0 +1,127 @@
+/* === Base Reset & Typography === */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Header === */
+.site-header {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  border-bottom: 2px solid #388E3C;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.site-header .tagline {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  color: #e0f2e9;
+}
+
+/* === Layout Container === */
+.content-layout {
+  flex: 1;
+  display: grid;
+  grid-template-areas:
+    "navigation-panel main-section";
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* === Sidebar Navigation === */
+.navigation-panel {
+  grid-area: navigation-panel;
+  background-color: #eaeaea;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.navigation-panel ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.navigation-panel li {
+  margin-bottom: 0.75rem;
+}
+
+.navigation-panel a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navigation-panel a:hover,
+.navigation-panel a:focus {
+  background-color: #d0f0d8;
+  color: #2e7d32;
+  outline: none;
+}
+
+/* === Main Content === */
+.main-section {
+  grid-area: main-section;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.main-section h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #2e7d32;
+}
+
+.main-section p {
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* === Footer === */
+.site-footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  margin-top: auto;
+}
+
+/* === Responsive Layout === */
+@media (max-width: 768px) {
+  .content-layout {
+    grid-template-areas:
+      "main-section"
+      "navigation-panel";
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .navigation-panel {
+    margin-top: 1rem;
+  }
+}
